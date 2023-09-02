@@ -19,3 +19,9 @@ it("akses endpoint /cicd return Belajar CI", async () => {
   expect(res.status).toBe(200);
   expect(res.text).toBe("Belajar CI");
 });
+
+it("akses endpoint /post/1 return Post 1", async () => {
+  const res = await request.get("/post/1");
+  expect(res.status).toBe(200);
+  expect(res.text).toBe("Post 1");
+});

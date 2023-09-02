@@ -9,4 +9,8 @@ router.get("/cicd", function (req, res, next) {
   res.send("Belajar CI");
 });
 
+router.get("/post/:id", function (req, res, next) {
+  res.send("Post " + req.params.id);
+});
+
 module.exports = router;
