@@ -10,7 +10,7 @@ router.get("/cicd", function (req, res, next) {
 });
 
 router.get("/post/:id", function (req, res, next) {
-  res.send("Post " + req.params.id);
+  res.send("Post" + req.params.id);
 });
 
 module.exports = router;
