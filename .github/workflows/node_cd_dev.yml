@@ -1,0 +1,28 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CD dev
+
+on:
+  push:
+    branches: [ "development" ]
+    
+jobs:
+ build:
+    name: Deploy to VPS Dev
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: 22
+        script: |
+          cd ~/wahyu/ci_cd_node_belajar
+          git stash
+          git pull origin development
+          git status
+          git install --only=prod
+          pm2 restart cicd_node
