@@ -25,3 +25,9 @@ it("akses endpoint /post/1 return Post 1", async () => {
   expect(res.status).toBe(200);
   expect(res.text).toBe("Post 1");
 });
+
+it("akses endpoint /comment return Comment", async () => {
+  const res = await request.get("/comment");
+  expect(res.status).toBe(200);
+  expect(res.text).toBe("Comment");
+});
