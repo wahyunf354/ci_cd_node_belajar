@@ -24,7 +24,7 @@ jobs:
           git pull origin development
           git status
           apt-get install node
+          export PATH="/root/.nvm/versions/node/v16.14.0/bin:$PATH"
           echo "PATH: $PATH"
-          ls /root/.nvm/versions/node/v16.14.0/bin
           npm i --only=prod
           pm2 restart cicd_node
