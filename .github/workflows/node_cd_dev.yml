@@ -23,4 +23,4 @@ jobs:
           cd ~/wahyu/ci_cd_node_belajar
           git pull origin development
           git status
-          npm -v
+          whoami
