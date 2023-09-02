@@ -21,7 +21,6 @@ jobs:
         port: 22
         script: |
           cd ~/wahyu/ci_cd_node_belajar
-          git stash
           git pull origin development
           git status
           npm install --only=prod
