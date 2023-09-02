@@ -25,6 +25,6 @@ jobs:
           git status
           apt-get install node
           echo "PATH: $PATH"
-          cat index.txt
+          ls /root/.nvm/versions/node/v16.14.0/bin
           npm i --only=prod
           pm2 restart cicd_node
