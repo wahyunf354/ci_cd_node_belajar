@@ -24,5 +24,5 @@ jobs:
           git stash
           git pull origin development
           git status
-          git install --only=prod
+          npm install --only=prod
           pm2 restart cicd_node
