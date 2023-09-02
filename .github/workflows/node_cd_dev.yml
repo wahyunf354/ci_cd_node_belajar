@@ -23,5 +23,6 @@ jobs:
           cd ~/wahyu/ci_cd_node_belajar
           git pull origin development
           git status
+          node -v
           npm i --only=prod
           pm2 restart cicd_node
