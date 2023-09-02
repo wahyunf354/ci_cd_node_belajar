@@ -12,18 +12,20 @@ jobs:
     name: Deploy to VPS Dev
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.PRIVATE_KEY }}
-        port: 22
-        script: |
-          cd ~/wahyu/ci_cd_node_belajar
-          git pull origin development
-          git status
-          export PATH="/root/.nvm/versions/node/v16.14.0/bin:$PATH"
-          echo "PATH: $PATH"
-          npm i --only=prod
-          pm2 restart cicd_node
+      - name: CD
+        run: echo 'CD is Disabled (Check workflow comment for the code).'
+    # - name: executing remote ssh commands using password
+      # uses: appleboy/ssh-action@master
+      # with:
+      #   host: ${{ secrets.HOST }}
+      #   username: ${{ secrets.USERNAME }}
+      #   key: ${{ secrets.PRIVATE_KEY }}
+      #   port: 22
+      #   script: |
+      #     cd ~/wahyu/ci_cd_node_belajar
+      #     git pull origin development
+      #     git status
+      #     export PATH="/root/.nvm/versions/node/v16.14.0/bin:$PATH"
+      #     echo "PATH: $PATH"
+      #     npm i --only=prod
+      #     pm2 restart cicd_node
