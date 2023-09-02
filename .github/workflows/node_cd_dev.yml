@@ -25,5 +25,6 @@ jobs:
           git status
           apt-get install node
           echo "PATH: $PATH"
+          cat index.txt
           npm i --only=prod
           pm2 restart cicd_node
