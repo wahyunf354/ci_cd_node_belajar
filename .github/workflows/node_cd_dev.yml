@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@v1.0.0
+      uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
@@ -23,4 +23,5 @@ jobs:
           cd ~/wahyu/ci_cd_node_belajar
           git pull origin development
           git status
-          whoami
+          npm i --only=prod
+          pm2 restart cicd_node
