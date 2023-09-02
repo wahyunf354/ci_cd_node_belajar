@@ -23,7 +23,6 @@ jobs:
           cd ~/wahyu/ci_cd_node_belajar
           git pull origin development
           git status
-          apt-get install node
           export PATH="/root/.nvm/versions/node/v16.14.0/bin:$PATH"
           echo "PATH: $PATH"
           npm i --only=prod
